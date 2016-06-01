@@ -6,5 +6,5 @@ garbage/
 fonts/
 images/
 js/
-css/
-!css/patros.css
+css/*.css
+!patros.css
