@@ -22,9 +22,9 @@ if (in_array($ip, $filterIP)) {
         $uri = urldecode($_SERVER['REQUEST_URI']);
         $sql = "INSERT INTO visitor (ip, referer, time, uri, agent) "
             . "VALUES(:ip, :referer, NOW(), :uri, :agent);";
-        if ($ip != '127.0.0.1') {
-            $sql = "SET time_zone = 'Asia/Yekaterinburg'; " . $sql;
-        }
+//        if ($ip != '127.0.0.1') {
+//            $sql = "SET time_zone = 'Asia/Yekaterinburg'; " . $sql;
+//        }
         $query = $db->prepare($sql);
         $query->bindParam(':referer', $referer);
         $query->bindParam(':ip', $ip, PDO::PARAM_STR, 15);

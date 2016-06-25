@@ -1,10 +1,6 @@
 *.zip
 log/error.log
-font-awesome/
 nbproject/
-garbage/
-fonts/
-images/
-js/
-css/*.css
-!patros.css
+.idea/
+php/db.php
+bti.iml

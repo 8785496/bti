@@ -41,7 +41,7 @@ $today = !isset($_GET['yesterday']);
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="/admin">Просмотры сегодня</a></li>
                         <li><a href="/admin?yesterday">Просмотры вчера</a></li>
-                        <li><a href="log.php">Лог ошибок</a></li>
+                        <li><a href="/admin/log.php">Лог ошибок</a></li>
                         <li><a href="/admin/request.php">Заявок <span class="badge"><?= $countRequest ?></span></a></li>
                         <li><a href="/admin/email.php">Писем <span class="badge"><?= $countEmail ?></span></a></li>
                         <li>

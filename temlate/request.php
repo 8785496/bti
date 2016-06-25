@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
         <title>Кадастровые работы - Узнать стоимость работ</title>
-        <link rel="shortcut icon" type="image/x-icon" href="/land_surveying.ico">
+        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
         <!-- Bootstrap Core CSS -->
         <link href="/css/bootstrap.min.css" rel="stylesheet">
         <!-- Custom Fonts -->
