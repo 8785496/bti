@@ -1,4 +1,4 @@
-CREATE TABLE `email` (
+CREATE TABLE IF NOT EXISTS `email` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(128) NOT NULL,
   `name` varchar(128) NOT NULL,
@@ -9,7 +9,7 @@ CREATE TABLE `email` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE `request` (
+CREATE TABLE IF NOT EXISTS `request` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(64) DEFAULT NULL,
   `type_object` varchar(64) DEFAULT NULL,
@@ -24,14 +24,15 @@ CREATE TABLE `request` (
   `files` text,
   `time` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
-CREATE TABLE `visitor` (
+CREATE TABLE IF NOT EXISTS `visitor` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `ip` varchar(15) NOT NULL,
-  `uri` varchar(32) NOT NULL,
+  `uri` varchar(64) NOT NULL,
+  `agent` text NOT NULL,
   `referer` text,
   `time` datetime NOT NULL,
   `location` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
