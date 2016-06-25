@@ -23,7 +23,7 @@ try {
     $folder = '20160429_152536';
     
     $sql = "INSERT INTO request (email, type_object, type_work, name, phone, target, adress, size, description, folder, files, time) "
-            . "VALUES(:email, :typeObject, :typeWork, :name, :phone, :target, :adress, :size, :description, :folder, :files, NOW());";
+            . "VALUES(:email, :typeObject, :typeWork, :name, :phone, :target, :adress, :size, :description, :folder, :files, :time);";
     $query = $db->prepare($sql);
     if ($email) {
         $query->bindParam(':email', $email, PDO::PARAM_STR, 64);
@@ -64,6 +64,7 @@ try {
     }
     $query->bindParam(':folder', $folder, PDO::PARAM_STR, 32);
     $query->bindValue(':files', null, PDO::PARAM_NULL);
+    $query->bindValue(':time', (new DateTime())->format('Y-m-d H:i:s'));
     
     if ($query->execute()) {
         echo 1;

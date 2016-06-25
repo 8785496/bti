@@ -20,13 +20,14 @@ if (in_array($ip, $filterIP)) {
     try {
         $db = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
         $uri = urldecode($_SERVER['REQUEST_URI']);
-        $sql = "INSERT INTO visitor (ip, referer, time, uri, `agent`) "
-            . "VALUES(:ip, :referer, NOW(), :uri, :agent);";
+        $sql = "INSERT INTO visitor (ip, referer, time, uri, agent) "
+            . "VALUES(:ip, :referer, :time, :uri, :agent);";
         $query = $db->prepare($sql);
         $query->bindParam(':referer', $referer);
         $query->bindParam(':ip', $ip, PDO::PARAM_STR, 15);
         $query->bindParam(':uri', $uri, PDO::PARAM_STR, 64);
         $query->bindParam(':agent', $agent, PDO::PARAM_STR);
+        $query->bindValue(':time', (new DateTime())->format('Y-m-d H:i:s'));
         $query->execute();
     } catch (Exception $e) {
         $fname = __DIR__ . '/../log/error.log';
