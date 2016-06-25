@@ -22,9 +22,6 @@ if (in_array($ip, $filterIP)) {
         $uri = urldecode($_SERVER['REQUEST_URI']);
         $sql = "INSERT INTO visitor (ip, referer, time, uri, `agent`) "
             . "VALUES(:ip, :referer, NOW(), :uri, :agent);";
-//        if ($ip != '127.0.0.1') {
-//            $sql = "SET time_zone = 'Asia/Yekaterinburg'; " . $sql;
-//        }
         $query = $db->prepare($sql);
         $query->bindParam(':referer', $referer);
         $query->bindParam(':ip', $ip, PDO::PARAM_STR, 15);
@@ -32,9 +29,6 @@ if (in_array($ip, $filterIP)) {
         $query->bindParam(':agent', $agent, PDO::PARAM_STR);
         $query->execute();
     } catch (Exception $e) {
-        echo $e->getMessage();
-        exit;
-
         $fname = __DIR__ . '/../log/error.log';
         $content = $e->getMessage() . "\n";
         file_put_contents($fname, $content, FILE_APPEND | LOCK_EX);

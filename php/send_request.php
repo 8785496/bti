@@ -24,9 +24,6 @@ try {
     
     $sql = "INSERT INTO request (email, type_object, type_work, name, phone, target, adress, size, description, folder, files, time) "
             . "VALUES(:email, :typeObject, :typeWork, :name, :phone, :target, :adress, :size, :description, :folder, :files, NOW());";
-    if ($_SERVER['REMOTE_ADDR'] != '127.0.0.1') {
-        $sql = "SET time_zone = 'Asia/Yekaterinburg'; " . $sql;
-    }
     $query = $db->prepare($sql);
     if ($email) {
         $query->bindParam(':email', $email, PDO::PARAM_STR, 64);

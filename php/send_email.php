@@ -11,9 +11,6 @@ if (isset($_REQUEST['email'])) {
         $db = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
         $sql = "INSERT INTO email (email, name, subject, body, time) "
                 . "VALUES(:email, :name, :subject, :body, NOW());";
-        if ($_SERVER['REMOTE_ADDR'] != '127.0.0.1') {
-            $sql = "SET time_zone = 'Asia/Yekaterinburg'; " . $sql;
-        }
         $query = $db->prepare($sql);
         $query->bindParam(':email', $email, PDO::PARAM_STR, 128);
         $query->bindParam(':name', $name, PDO::PARAM_STR, 128);
