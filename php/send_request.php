@@ -1,9 +1,11 @@
 <?php
 
 require __DIR__ . '/db.php';
+require __DIR__ . '/mailer.php';
 
 try {
     $db = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
+    $admin_email = "kadastr_rabot@mail.ru";
     
     if (isset($_POST['name'])) {
         $name = trim($_POST['name']);
@@ -67,6 +69,22 @@ try {
     $query->bindValue(':time', (new DateTime())->format('Y-m-d H:i:s'));
     
     if ($query->execute()) {
+        $body =
+            "Имя: $name\n" .
+            "E-mail: $email\n" .
+            "Телефон: $phone\n" .
+            "Тип объекта: $typeObject\n" .
+            "Вид работ: $typeWork\n" .
+            "Цель работ: $target\n" .
+            "Адрес: $adress\n" .
+            "Площадь (длина): $size\n" .
+            "Описание: $description"
+        ;
+        $message = Swift_Message::newInstance('Request from site 2136340.xyz')
+            ->setBody($body)
+            ->setFrom($smtp['username'])
+            ->setTo(['georg.88@mail.ru', $admin_email]);
+        $mailer->send($message);
         echo 1;
     } else {
         echo 0;

@@ -1,0 +1,12 @@
+{
+    "name": "user/bti",
+    "require": {
+        "swiftmailer/swiftmailer": "^5.4"
+    },
+    "authors": [
+        {
+            "name": "German",
+            "email": "georg.88@mail.ru"
+        }
+    ]
+}
