@@ -19,7 +19,7 @@ try {
         if (isset($result['city'])) {
             if (preg_match($filterLocation, $result['city'])) {
                 $queryDelete->bindParam(':id', $row['id'], PDO::PARAM_INT);
-                $query->execute();
+                $queryDelete->execute();
             } else {
                 $location = $result['city'];
                 if (isset($result['regionName'])) {
