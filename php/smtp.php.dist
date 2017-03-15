@@ -1,0 +1,9 @@
+<?php
+
+return [
+    'host' => 'smtp.yandex.ru',
+    'port' => 465,
+    'encryption' => 'ssl',
+    'username' => 'mail@mail.ru',
+    'password' => ''
+];

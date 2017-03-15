@@ -1,8 +1,10 @@
 <?php
 
+require __DIR__ . '/db.php';
+require __DIR__ . '/mailer.php';
+
 if (isset($_REQUEST['email'])) {
-    require __DIR__ . '/db.php';
-    $admin_email = "bti-novosib@mail.ru";
+    $admin_email = "kadastr_rabot@mail.ru";
     $name = $_REQUEST['first_name'];
     $email = $_REQUEST['email'];
     $message = $_REQUEST['message'];
@@ -18,6 +20,13 @@ if (isset($_REQUEST['email'])) {
         $query->bindParam(':body', $message, PDO::PARAM_STR);
         $query->bindValue(':time', (new DateTime())->format('Y-m-d H:i:s'));
         if ($query->execute()) {
+            $body = "Сообщение: $message\n" .
+                "E-mail: $email\n";
+            $message = Swift_Message::newInstance($subject)
+                ->setBody($body)
+                ->setFrom($smtp['username'])
+                ->setTo(['georg.88@mail.ru', $admin_email]);
+            $mailer->send($message);
             echo 1;
         } else {
             echo 0;

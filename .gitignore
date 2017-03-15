@@ -1,7 +1,16 @@
 *.zip
+<<<<<<< HEAD
 log/error.log
 nbproject/
 .idea/
 php/db.php
 bti.iml
+=======
+/log/error.log
+/nbproject/
+/.idea/
+/php/db.php
+/php/smtp.php
+/bti.iml
+>>>>>>> c933a4d43170f01d5a2a3b6132958c052dc06b73
 /vendor/
