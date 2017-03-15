@@ -106,14 +106,19 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-xs-8">
+                                <div class="col-xs-6">
                                     <a href="/images/attestat_800.jpg" title="Квалификационный аттестат" data-gallery="">
-                                        <img style="height: 100%; width: 100%" src="/images/attestat_400.jpg" alt="Квалификационный аттестат">
+                                        <img style="height: 100%; width: 100%" src="/images/attestat_2017_400.jpg" alt="Квалификационный аттестат">
                                     </a>
                                 </div>
-                                <div class="col-xs-4">
-                                    <a href="/images/certificate_800.jpg" title="Свидетельство" data-gallery="">
-                                        <img style="height: 100%; width: 100%" src="/images/certificate_400.jpg" alt="Свидетельство">
+                                <div class="col-xs-3">
+                                    <a href="/images/seminar_800.jpg" title="Семинар" data-gallery="">
+                                        <img style="height: 100%; width: 100%" src="/images/seminar_400.jpg" alt="Семинар">
+                                    </a>
+                                </div>
+                                <div class="col-xs-3">
+                                    <a href="/images/certificate_2017_800.jpg" title="Свидетельство" data-gallery="">
+                                        <img style="height: 100%; width: 100%" src="/images/certificate_2017_400.jpg" alt="Свидетельство">
                                     </a>
                                 </div>
                             </div>

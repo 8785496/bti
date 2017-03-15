@@ -4,3 +4,4 @@ nbproject/
 .idea/
 php/db.php
 bti.iml
+/vendor/
