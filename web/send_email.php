@@ -1,7 +1,7 @@
 <?php
 
-require __DIR__ . '/db.php';
-require __DIR__ . '/mailer.php';
+require __DIR__ . '/../php/db.php';
+require __DIR__ . '/../php/mailer.php';
 
 if (isset($_REQUEST['email'])) {
     $admin_email = "kadastr_rabot@mail.ru";

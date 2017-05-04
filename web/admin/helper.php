@@ -31,7 +31,7 @@ function htmlDate($datetime) {
 }
 
 function logWrite($message) {
-    $fname = __DIR__ . '/../log/error.log';
+    $fname = __DIR__ . '/../../log/error.log';
     $content = $message . "\n";
     file_put_contents($fname, $content, FILE_APPEND | LOCK_EX);
 }

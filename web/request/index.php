@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . '/../php/visitor.php';
+require __DIR__ . '/../../php/visitor.php';
 
 function printRButton ($value) {
     
@@ -13,4 +13,4 @@ function printRButton ($value) {
     echo $value . '</label></div>'; 
 }
 
-require __DIR__ . '/../temlate/request.php';
+require __DIR__ . '/../../temlate/request.php';

@@ -73,7 +73,7 @@
                 <br>
                 <div class="row">
                     <div class="col-lg-12">
-                        <form action="/php/send_request.php" id="requestForm" class="form-horizontal" id="" method="post" enctype="multipart/form-data">
+                        <form action="/send_request.php" id="requestForm" class="form-horizontal" id="" method="post" enctype="multipart/form-data">
                             <!--Цель работ-->
                             <div class="form-group">
                                 <!--технический план, межевой план, , план объкта-->
@@ -367,7 +367,7 @@
                             },
                             data: formData,
                             type: 'POST',
-                            url: '/php/send_request.php'
+                            url: '/send_request.php'
                         });
                         return true;
                     } else {

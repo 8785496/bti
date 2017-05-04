@@ -2,7 +2,7 @@
 require __DIR__ . '/auth.php';
 require __DIR__ . '/get_browser.php';
 require __DIR__ . '/helper.php';
-require __DIR__ . '/../php/db.php';
+require __DIR__ . '/../../php/db.php';
 
 try {
     $db = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);

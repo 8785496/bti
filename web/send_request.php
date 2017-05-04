@@ -1,7 +1,7 @@
 <?php
 
-require __DIR__ . '/db.php';
-require __DIR__ . '/mailer.php';
+require __DIR__ . '/../php/db.php';
+require __DIR__ . '/../php/mailer.php';
 
 try {
     $db = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);

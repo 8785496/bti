@@ -299,7 +299,7 @@
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-8">
-                            <form class="inline" id="contactForm" method="post" action="/php/send_request.php">
+                            <form class="inline" id="contactForm" method="post" action="/send_email.php">
                                 <div class="row">
                                     <div class="col-sm-6 height-contact-element">
                                         <div class="form-group">
@@ -518,7 +518,7 @@
                                 console.log('Finished');
                             },
                             type: 'POST',
-                            url: 'php/send_email.php',
+                            url: 'send_email.php',
                         });
                         return true;
                     } else {

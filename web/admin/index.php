@@ -45,7 +45,7 @@
         $("#getlocation").click(function (e) {
             e.preventDefault();
             $.ajax({
-                url: "/cron/getlocation.php",
+                url: "/admin/getlocation.php",
                 async: true
             }).done(function () {
                 window.location.reload();
@@ -62,7 +62,7 @@
                         token: "JAjG4ubDX3"
                     },
                     type: "POST",
-                    url: "delete.php",
+                    url: "/admin/delete.php",
                     async: true
                 }).done(function () {
                     window.location.reload();
