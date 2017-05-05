@@ -1,9 +1,6 @@
 <?php
 
-$users = [
-    'bti' => '250217',
-    'Kadastr' => 'Kadastr'
-];
+$users = require(__DIR__ . '/../../php/users.php');
 
 if (!isset($_SERVER['PHP_AUTH_USER'])) {
     header('WWW-Authenticate: Basic realm="Admin Authenticate"');
